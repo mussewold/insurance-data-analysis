@@ -20,3 +20,6 @@ def load_data(file_path):
     print(f"File successfully converted and saved as {output_file}")
     return data
 
+def format_date(date_str):
+    return pd.to_datetime(date_str)
+
