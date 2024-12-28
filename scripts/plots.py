@@ -21,3 +21,20 @@ class Plots:
         plt.ylabel(y)
         plt.legend(title=hue)
         plt.show()
+
+    def boxplot_two_columns(self, column1, column2):
+        # Create box plots for column1 and column2
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 5))
+
+        # Box plot for column1
+        self.df.boxplot(column=column1, ax=ax1)
+        ax1.set_title(f'Box Plot of {column1}')
+        ax1.set_ylabel(column1)
+
+        # Box plot for column2  
+        self.df.boxplot(column=column2, ax=ax2)
+        ax2.set_title(f'Box Plot of {column2}')
+        ax2.set_ylabel(column2)
+
+        plt.tight_layout()
+        plt.show()
